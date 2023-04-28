@@ -20,6 +20,7 @@
 package org.sonar.api.batch.sensor.internal;
 
 import org.sonar.api.batch.sensor.code.NewSignificantCode;
+import org.sonar.api.batch.sensor.comment.Comment;
 import org.sonar.api.batch.sensor.coverage.NewCoverage;
 import org.sonar.api.batch.sensor.cpd.NewCpdTokens;
 import org.sonar.api.batch.sensor.error.AnalysisError;
@@ -82,4 +83,6 @@ public interface SensorStorage {
    * @since 7.2
    */
   void store(NewSignificantCode significantCode);
+
+  void store(Comment comment);
 }

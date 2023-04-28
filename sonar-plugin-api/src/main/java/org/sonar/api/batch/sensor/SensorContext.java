@@ -29,6 +29,7 @@ import org.sonar.api.batch.rule.ActiveRules;
 import org.sonar.api.batch.sensor.cache.ReadCache;
 import org.sonar.api.batch.sensor.cache.WriteCache;
 import org.sonar.api.batch.sensor.code.NewSignificantCode;
+import org.sonar.api.batch.sensor.comment.NewComment;
 import org.sonar.api.batch.sensor.coverage.NewCoverage;
 import org.sonar.api.batch.sensor.cpd.NewCpdTokens;
 import org.sonar.api.batch.sensor.error.NewAnalysisError;
@@ -250,4 +251,6 @@ public interface SensorContext {
    */
   @Beta
   boolean isCacheEnabled();
+
+  NewComment newComment();
 }
