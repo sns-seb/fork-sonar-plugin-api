@@ -19,6 +19,8 @@
  */
 package org.sonar.api.batch.sensor.comment;
 
+import java.util.List;
+
 public interface Comment {
     enum Type {
         LINE, BLOCK
@@ -28,5 +30,5 @@ public interface Comment {
 
     Type getType();
 
-    String getText();
+    List<String> getLines();
 }

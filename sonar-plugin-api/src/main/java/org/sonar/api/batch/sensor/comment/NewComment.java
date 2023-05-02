@@ -19,6 +19,8 @@
  */
 package org.sonar.api.batch.sensor.comment;
 
+import java.util.List;
+
 public interface NewComment {
     NewCommentLocation newCommentLocation();
 
@@ -26,7 +28,11 @@ public interface NewComment {
 
     NewComment setType(Comment.Type type);
 
-    NewComment setText(String text);
+    /**
+     * @throws NullPointerException if {@code lines} is {@code null}
+     * @throws IllegalArgumentException if {@code lines} is empty
+     */
+    NewComment setLines(List<String> lines);
 
     void save();
 }
